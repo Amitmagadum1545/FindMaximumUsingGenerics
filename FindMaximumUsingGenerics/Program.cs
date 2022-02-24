@@ -11,7 +11,7 @@ namespace FindMaximumUsingGenerics
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Find Maximum Value Using Generics");
-            double max= Maximum.FindMaximu(4.8, 0.9, 5.012);
+            string max= Maximum.FindMaximu("A","K","Q");
             Console.WriteLine("Maximum Value is : " + max);
             Console.ReadLine();
         }
