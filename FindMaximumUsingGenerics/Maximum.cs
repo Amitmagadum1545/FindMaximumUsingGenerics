@@ -8,35 +8,22 @@ namespace FindMaximumUsingGenerics
 {
     internal class Maximum<T>
     {
-        public T a, b, c;
+        public T[] generalValue;
 
-        public Maximum(T a, T b, T c)
+        public Maximum(T[] generalValue)
         {
-            this.a = a;
-            this.b = b;
-            this.c = c;
+            this.generalValue = generalValue;
         }
 
-        public static T FindMaximum(T a ,T b ,T c )
+        public static T FindMaximum(T[] generalValue)
         {
-
-            if (Comparer<T>.Default.Compare(a, b)>=0 && Comparer<T>.Default.Compare(a , c)>=0) 
-            {
-                return a;
-            }
-            if (Comparer<T>.Default.Compare(b, c)>=0 && Comparer<T>.Default.Compare(b,a)>=0)
-            {
-                return b;
-            }
-            if (Comparer<T>.Default.Compare(c,a)>=0 && Comparer<T>.Default.Compare(c,b)>=0)
-            {
-                return c;
-            }
-            return a;
+            Array.Sort(generalValue);
+            Array.Reverse(generalValue);
+            return generalValue[0];
         }
         public T MaxMetode()
         {
-            T Max = Maximum<T>.FindMaximum(this.a, this.b, this.c);
+            T Max =FindMaximum(this.generalValue);
             return Max;
         }
     }
