@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace FindMaximumUsingGenerics
 {
-    internal class Maximum
+    internal class Maximum<T>
     {
-        public static T FindMaximum<T>(T a ,T b ,T c )
+        public T a, b, c;
+
+        public Maximum(T a, T b, T c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+        public static T FindMaximum(T a ,T b ,T c )
         {
 
             if (Comparer<T>.Default.Compare(a, b)>=0 && Comparer<T>.Default.Compare(a , c)>=0) 
@@ -24,6 +33,11 @@ namespace FindMaximumUsingGenerics
                 return c;
             }
             return a;
+        }
+        public T MaxMetode()
+        {
+            T Max = Maximum<T>.FindMaximum(this.a, this.b, this.c);
+            return Max;
         }
     }
 }

@@ -12,11 +12,9 @@ namespace FindMaximumUsingGenerics
         {
             Console.WriteLine("Welcome To Find Maximum Value Using Generics");
 
-            
-
-            string maxstring= Maximum.FindMaximum("Apple", "Peach", "Banana");
-            int maxint = Maximum.FindMaximum(95, 70, 68);
-            double maxdouble = Maximum.FindMaximum(2.85, 9.78, 11.35);
+            string maxstring = new Maximum<string>("Apple", "Peach", "Banana").MaxMetode();
+            int maxint = new Maximum<int>(95, 70, 68).MaxMetode();
+            double maxdouble = new Maximum<double>(2.85, 9.78, 11.35).MaxMetode();
             Console.WriteLine("Maximum Value is : " + maxstring);
             Console.WriteLine("Maximum Value is : " + maxint);
             Console.WriteLine("Maximum Value is : " + maxdouble);
