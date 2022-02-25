@@ -26,5 +26,10 @@ namespace FindMaximumUsingGenerics
             T Max =FindMaximum(this.generalValue);
             return Max;
         }
+        public void printMax()
+        {
+            T maxValue= MaxMetode();
+            Console.WriteLine("Maximum Value : "+ maxValue);
+        }
     }
 }

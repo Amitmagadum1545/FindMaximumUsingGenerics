@@ -16,12 +16,13 @@ namespace FindMaximumUsingGenerics
             int[] intArray = { 195, 70, 268 ,90,105,205,210};
             double[] doubleArray = { 2.85, 19.78, 11.35 };
 
-            string maxstring = new Maximum<string>(stringArray).MaxMetode();
-            int maxint = new Maximum<int>(intArray).MaxMetode();
-            double maxdouble = new Maximum<double>(doubleArray).MaxMetode();
-            Console.WriteLine("Maximum Value is : " + maxstring);
-            Console.WriteLine("Maximum Value is : " + maxint);
-            Console.WriteLine("Maximum Value is : " + maxdouble);
+            Maximum<string> maxstring = new Maximum<string>(stringArray);
+            maxstring.printMax();
+            Maximum<int> maxint = new Maximum<int>(intArray);
+            maxint.printMax();
+            Maximum<double> maxdouble = new Maximum<double>(doubleArray);
+            maxdouble.printMax();
+         
             Console.ReadLine();
         }
     }
