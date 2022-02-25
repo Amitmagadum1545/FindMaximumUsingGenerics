@@ -8,18 +8,18 @@ namespace FindMaximumUsingGenerics
 {
     internal class Maximum
     {
-        public static string FindMaximu(string a , string b , string c )
+        public static T FindMaximum<T>(T a ,T b ,T c )
         {
 
-            if (a.CompareTo(b)>=0 && a.CompareTo(c)>=0) 
+            if (Comparer<T>.Default.Compare(a, b)>=0 && Comparer<T>.Default.Compare(a , c)>=0) 
             {
                 return a;
             }
-            if (b.CompareTo(c)>=0 && b.CompareTo(a)>=0)
+            if (Comparer<T>.Default.Compare(b, c)>=0 && Comparer<T>.Default.Compare(b,a)>=0)
             {
                 return b;
             }
-            if (c.CompareTo(a)>=0 && c.CompareTo(b)>=0)
+            if (Comparer<T>.Default.Compare(c,a)>=0 && Comparer<T>.Default.Compare(c,b)>=0)
             {
                 return c;
             }
